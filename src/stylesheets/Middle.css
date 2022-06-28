@@ -1,0 +1,17 @@
+@import "./Colors.css";
+
+.middle {
+    flex: .5;
+    height: 100vh;
+    overflow: scroll;
+    border-right: solid var(--border) 1px;
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+.middle::-webkit-scrollbar {
+    display: none;
+  }
+

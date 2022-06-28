@@ -1,0 +1,92 @@
+.rightside {
+    flex: .3;
+    padding-left: 1rem;
+    height: 100vh;
+    overflow: scroll;
+}
+
+.rightside::-webkit-scrollbar {
+    display: none;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1rem;
+    gap: 1rem;
+    width: 95%;
+
+}
+
+.input__box {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    padding: 1rem,
+}
+
+.right__input {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    background-color: #EDF1F2;
+    border-radius: 30px;
+    font-size: 1rem;
+    top: 5px;
+}
+
+.right__input::placeholder {
+    color: rgb(59, 59, 59);
+    opacity: 1;
+    font-size: 1rem;
+    margin-left: 1rem;
+    padding: 1rem;
+}
+
+.right__input:focus {
+    border: 1px solid var(--main-color);
+    outline: none;
+}
+
+.whatsHappening, .rightSide__whoToFollow {
+    background-color: #F7F9F9;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.link-copy {
+    width: 100%;
+    padding-bottom: 5rem;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 1rem;
+}
+
+.link {
+    font-size: .8rem;
+    color: rgb(59, 59, 59);
+}
+
+.link a {
+    text-decoration: none;
+    color: rgb(59, 59, 59);
+}
+
+.heading {
+    margin-bottom: 1rem;
+    margin: 1rem;
+}
+
+.trending {
+    width: 100%;
+}
+
+

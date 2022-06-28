@@ -1,0 +1,48 @@
+.trendingPost {
+    width: 100%;
+    padding: .5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trendingPost:hover {
+    background-color: #ecedee;
+    cursor: pointer;
+}
+
+.trendingPost__Category {
+    display: flex;
+    align-items: center;
+    font-size: .8rem;
+    color: rgb(87, 87, 87);
+    gap: 10px;
+}
+
+.trendingPost__CategoryFlex {
+    display: flex;
+    align-items: center;
+}
+
+.category__dot {
+    font-size: .5rem;
+}
+
+.trendingPost__caption {
+    margin-top: .5rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.trendingPost__Imagebox {
+    width: 75px;
+    height: 75px;
+}
+
+.trendingPost__Image {
+    border-radius: 15px;
+    width: 75px;
+    height: 75px;
+}

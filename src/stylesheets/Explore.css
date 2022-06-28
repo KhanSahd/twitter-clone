@@ -1,0 +1,20 @@
+.explore {
+    flex: .5;
+    height: 100vh;
+    overflow: scroll;
+    border-right: solid var(--border) 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+.searchDiv {
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchDiv input {
+    width: 90%;
+    background-color: #EDF1F2;
+}
