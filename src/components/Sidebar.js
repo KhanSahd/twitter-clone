@@ -9,6 +9,7 @@ import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import IconButton from "@mui/material/IconButton";
+import { BsPencil } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 function Sidebar() {
@@ -38,11 +39,8 @@ function Sidebar() {
             </IconButton>
           </div>
         </Link>
-        <div className="sidebar__Explore sidebar__Icon">
-          <Link
-            to="/explore"
-            style={{ color: "black", textDecoration: "none" }}
-          >
+        <Link to="/explore" style={{ color: "black", textDecoration: "none" }}>
+          <div className="sidebar__Explore sidebar__Icon">
             <IconButton
               className="sidebar__IconButton"
               sx={{
@@ -55,8 +53,8 @@ function Sidebar() {
               <TagIcon fontSize="large" />
               <p>Explore</p>
             </IconButton>
-          </Link>
-        </div>
+          </div>
+        </Link>
         <div className="sidebar__Notifications sidebar__Icon">
           <IconButton
             className="sidebar__IconButton"
@@ -141,7 +139,8 @@ function Sidebar() {
             <p>More</p>
           </IconButton>
         </div>
-        <h3 className="sidebar__Tweet">Tweet</h3>
+        <h3 className="sidebar__Tweet desk">Tweet</h3>
+        <BsPencil className="mobile" />
       </div>
       <div className="sidebar__Avatar">
         <IconButton

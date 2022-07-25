@@ -33,14 +33,13 @@ function RightSide({ explore }) {
                 />
                 <TrendingPost
                   category="sports"
-                  time="live"
+                  time="LIVE"
                   caption="UFC 274"
                   img="https://cdn.vox-cdn.com/thumbor/9J46zKcxt3R8gIjrHBcSnIYJ9Rw=/0x0:5570x3714/1200x800/filters:focal(2332x1068:3222x1958)/cdn.vox-cdn.com/uploads/chorus_image/image/70501758/1370031142.0.jpg"
                 />
                 <TrendingPost
                   category="Los Angeles Times"
                   verified
-                  time="trending"
                   caption="Drake Releases new Studio album"
                   img="https://i.scdn.co/image/ab6761610000e5eb4293385d324db8558179afd9"
                 />
@@ -48,13 +47,11 @@ function RightSide({ explore }) {
                   category="Insider News"
                   verified
                   caption="The weather is really hot in California"
-                  time="trending"
                 />
                 <TrendingPost
                   category="Entertainment"
                   caption="Obi-Wan new episode airs today on Disney Plus"
                   img="https://www.indiewire.com/wp-content/uploads/2022/06/JTF-FF-002127.jpg?w=780"
-                  time="trending"
                 />
               </div>
             </div>

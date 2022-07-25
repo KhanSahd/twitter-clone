@@ -1,0 +1,18 @@
+.exploreBanner {
+    height: 35vh;
+    position: relative;
+    overflow: visible;
+}
+
+.exploreBanner__Heading {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.exploreBanner img {
+    height: 100%;
+    width: 100%;
+}

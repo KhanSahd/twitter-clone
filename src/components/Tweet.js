@@ -35,7 +35,7 @@ function Tweet({ name, username, url, text, verified }) {
             <div className="tweet__name">
               <div className="name__verified">
                 <p className="tweet__detailsName">{name}</p>
-                {verified ? (
+                {verified == true ? (
                   <VerifiedIcon
                     style={{ fontSize: "medium", color: "var(--main-color)" }}
                   />

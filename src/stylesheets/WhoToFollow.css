@@ -30,3 +30,19 @@
 .followButton {
     height: 35px;
 }
+
+@media screen and (min-width: 601px) and (max-width: 800px) {
+    .avatar__image {
+        width: 35px;
+        height: 35px;
+    }
+
+    .whoToFollow p {
+        font-size: .8rem;
+    }
+
+    .followButton {
+        height: 30px;
+    }
+
+}

@@ -23,13 +23,13 @@ function TrendingPost({
               />
             </div>
             <p className="category__dot">*</p>
-            <p>{time}</p>
+            {time ? <p>{time}</p> : <p>Trending</p>}
           </div>
         ) : (
           <div className="trendingPost__Category">
             <p>{category}</p>
             <p className="category__dot">*</p>
-            <p style={{ textTransform: "uppercase" }}>{time}</p>
+            {time ? <p>{time}</p> : <p>Trending</p>}
           </div>
         )}
         <div className="trendingPost__caption">

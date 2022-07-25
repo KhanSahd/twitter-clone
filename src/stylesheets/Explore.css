@@ -7,14 +7,18 @@
     flex-direction: column;
 }
 
-.searchDiv {
-    padding: 0 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+
+
+
+@media screen and (max-width: 600px ) {
+    .explore {
+        flex: .8;
+    }
 }
 
-.searchDiv input {
-    width: 90%;
-    background-color: #EDF1F2;
+@media screen and (min-width: 601px) and (max-width: 800px) {
+    .explore {
+        flex: .8;
+    }
 }

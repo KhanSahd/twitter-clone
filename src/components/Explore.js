@@ -1,18 +1,15 @@
 import React from "react";
 import "../stylesheets/Explore.css";
-import { VscGear } from "react-icons/vsc";
+import ExploreBanner from "./ExploreBanner";
+import ExploreSearchbar from "./ExploreSearchbar";
+import ExploreFeed from "./ExploreFeed.js";
 
 function Explore() {
   return (
     <div className="explore">
-      <div className="searchDiv">
-        <input
-          type="text"
-          className="right__input"
-          placeholder="Search twitter"
-        ></input>
-        <VscGear fontSize="large" />
-      </div>
+      <ExploreSearchbar />
+      <ExploreBanner />
+      <ExploreFeed />
     </div>
   );
 }
