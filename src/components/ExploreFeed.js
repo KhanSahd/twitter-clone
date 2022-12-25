@@ -1,94 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import TrendingPost from "./TrendingPost";
 import "../stylesheets/ExploreFeed.css";
 
+// API KEY: c692940a8cc4442d9d756e50d1ba3221
+
 function ExploreFeed() {
+  const [articles, setArticles] = useState([]);
+  const [error, setError] = useState(null);
+  const [Loading, setLoading] = useState(true);
+  useEffect(() => {
+    fetch(
+      "https://newsapi.org/v2/top-headlines?country=us&apiKey=" +
+        "c692940a8cc4442d9d756e50d1ba3221"
+    )
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw response;
+      })
+      .then((data) => setArticles(data.articles))
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+        setError(error);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
   return (
     <div className="exploreFeed">
-      <TrendingPost
-        category="sports"
-        time="1 hour ago"
-        caption="Golden State Warriors win the 2022 NBA Finals against the Boston Celtics in their game 6 victory!"
-        img="https://e0.365dm.com/20/10/2048x1152/skysports-stephen-curry-golden-state-warriors_5147327.jpg"
-      />
-      <TrendingPost
-        category="sports"
-        time="1 hour ago"
-        caption="Golden State Warriors win the 2022 NBA Finals against the Boston Celtics in their game 6 victory!"
-        img="https://e0.365dm.com/20/10/2048x1152/skysports-stephen-curry-golden-state-warriors_5147327.jpg"
-      />
-      <TrendingPost
-        category="sports"
-        time="1 hour ago"
-        caption="Golden State Warriors win the 2022 NBA Finals against the Boston Celtics in their game 6 victory!"
-        img="https://e0.365dm.com/20/10/2048x1152/skysports-stephen-curry-golden-state-warriors_5147327.jpg"
-      />
-      <TrendingPost
-        category="sports"
-        time="1 hour ago"
-        caption="Golden State Warriors win the 2022 NBA Finals against the Boston Celtics in their game 6 victory!"
-        img="https://e0.365dm.com/20/10/2048x1152/skysports-stephen-curry-golden-state-warriors_5147327.jpg"
-      />
-      <TrendingPost
-        category="sports"
-        time="1 hour ago"
-        caption="Golden State Warriors win the 2022 NBA Finals against the Boston Celtics in their game 6 victory!"
-        img="https://e0.365dm.com/20/10/2048x1152/skysports-stephen-curry-golden-state-warriors_5147327.jpg"
-      />
-      <TrendingPost
-        category="sports"
-        time="1 hour ago"
-        caption="Golden State Warriors win the 2022 NBA Finals against the Boston Celtics in their game 6 victory!"
-        img="https://e0.365dm.com/20/10/2048x1152/skysports-stephen-curry-golden-state-warriors_5147327.jpg"
-      />
-      <TrendingPost
-        category="sports"
-        time="1 hour ago"
-        caption="Golden State Warriors win the 2022 NBA Finals against the Boston Celtics in their game 6 victory!"
-        img="https://e0.365dm.com/20/10/2048x1152/skysports-stephen-curry-golden-state-warriors_5147327.jpg"
-      />
-      <TrendingPost
-        category="sports"
-        time="1 hour ago"
-        caption="Golden State Warriors win the 2022 NBA Finals against the Boston Celtics in their game 6 victory!"
-        img="https://e0.365dm.com/20/10/2048x1152/skysports-stephen-curry-golden-state-warriors_5147327.jpg"
-      />
-      <TrendingPost
-        category="sports"
-        time="1 hour ago"
-        caption="Golden State Warriors win the 2022 NBA Finals against the Boston Celtics in their game 6 victory!"
-        img="https://e0.365dm.com/20/10/2048x1152/skysports-stephen-curry-golden-state-warriors_5147327.jpg"
-      />
-      <TrendingPost
-        category="sports"
-        time="1 hour ago"
-        caption="Golden State Warriors win the 2022 NBA Finals against the Boston Celtics in their game 6 victory!"
-        img="https://e0.365dm.com/20/10/2048x1152/skysports-stephen-curry-golden-state-warriors_5147327.jpg"
-      />
-      <TrendingPost
-        category="sports"
-        time="1 hour ago"
-        caption="Golden State Warriors win the 2022 NBA Finals against the Boston Celtics in their game 6 victory!"
-        img="https://e0.365dm.com/20/10/2048x1152/skysports-stephen-curry-golden-state-warriors_5147327.jpg"
-      />
-      <TrendingPost
-        category="sports"
-        time="1 hour ago"
-        caption="Golden State Warriors win the 2022 NBA Finals against the Boston Celtics in their game 6 victory!"
-        img="https://e0.365dm.com/20/10/2048x1152/skysports-stephen-curry-golden-state-warriors_5147327.jpg"
-      />
-      <TrendingPost
-        category="sports"
-        time="1 hour ago"
-        caption="Golden State Warriors win the 2022 NBA Finals against the Boston Celtics in their game 6 victory!"
-        img="https://e0.365dm.com/20/10/2048x1152/skysports-stephen-curry-golden-state-warriors_5147327.jpg"
-      />
-      <TrendingPost
-        category="sports"
-        time="1 hour ago"
-        caption="Golden State Warriors win the 2022 NBA Finals against the Boston Celtics in their game 6 victory!"
-        img="https://e0.365dm.com/20/10/2048x1152/skysports-stephen-curry-golden-state-warriors_5147327.jpg"
-      />
+      {articles.map((item, index) => {
+        const date = new Date(item.publishedAt);
+        const pst = date.toLocaleString("en-US", {
+          timeZone: "America/Los_Angeles",
+        });
+        return (
+          <TrendingPost
+            key={index}
+            time={pst}
+            caption={item.description}
+            img={item.urlToImage}
+            category={item.source.name}
+          />
+        );
+      })}
     </div>
   );
 }

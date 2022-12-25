@@ -11,15 +11,31 @@ function Tweet({ name, username, url, text, verified }) {
   const [comments, setComments] = useState(0);
   const [likes, setLikes] = useState(0);
   const [retweets, setRetweets] = useState(0);
+  const [isLiked, setIsLiked] = useState(false);
+  const [isRetweeted, setIsRetweeted] = useState(false);
 
   function incrementComments() {
     setComments(comments + 1);
   }
+
   function incrementLikes() {
-    setLikes(likes + 1);
+    if (!isLiked) {
+      setLikes(likes + 1);
+      setIsLiked(!isLiked);
+    } else {
+      setLikes(likes - 1);
+      setIsLiked(!isLiked);
+    }
   }
+
   function incrementRetweets() {
-    setRetweets(retweets + 1);
+    if (!isRetweeted) {
+      setRetweets(retweets + 1);
+      setIsRetweeted(!isRetweeted);
+    } else {
+      setRetweets(retweets - 1);
+      setIsRetweeted(!isRetweeted);
+    }
   }
 
   return (
@@ -60,6 +76,7 @@ function Tweet({ name, username, url, text, verified }) {
               <AutorenewOutlinedIcon
                 onClick={incrementRetweets}
                 className="icon"
+                style={{ color: isRetweeted ? "green" : "black" }}
               />
               <p>{retweets}</p>
             </div>
@@ -67,6 +84,7 @@ function Tweet({ name, username, url, text, verified }) {
               <FavoriteBorderOutlinedIcon
                 onClick={incrementLikes}
                 className="icon"
+                style={{ color: isLiked ? "red" : "black" }}
               />
               <p>{likes}</p>
             </div>
